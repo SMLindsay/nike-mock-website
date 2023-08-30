@@ -5,7 +5,9 @@ import { footerLinks, socialMedia } from "../constants"
 const Footer = () => {
   return (
     <footer className="max-container">
+      {/* UPPER SECTION OF THE FOOTER */}
       <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
+        {/* LOGO AND FOOTER TEXT */}
         <div className="flex flex-col items-start">
           <a href="/">
             <img src={footerLogo} 
@@ -15,6 +17,7 @@ const Footer = () => {
             />
           </a>
           <p className="mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm">Get shoes ready for the new term at your nearest Nike store. Find your perfect size in store. Get rewards.</p>
+          {/* SOCIAL MEDIA ICONS */}
           <div className="flex items-center gap-5 mt-8">
             {socialMedia.map ((icon) => (
               <div className="flex justify-center items-center w-12 h-12 bg-white rounded-full hover:scale-125">
@@ -27,6 +30,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
+        {/* FOOTER LINKS */}
         <div className="flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap">
           {footerLinks.map((section) => (
             <div key={section}>
@@ -43,7 +47,9 @@ const Footer = () => {
           ))}
         </div>
       </div>
+      {/* LOWER SECTION OF FOOTER */}
       <div className="flex justify-between text-white-400 mt-24 max-sm:flex-col max-sm:items-center">
+        {/* COPYRIGHT */}
         <div className="flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer">
           <img 
           src={copyrightSign} 
@@ -54,6 +60,7 @@ const Footer = () => {
           />
           <p>Copyright. All rights reserved.</p>
         </div>
+        {/* TERMS & CONDITIONS */}
         <p className="font-montserrat cursor-pointer">Terms & Conditions apply.</p>
       </div>
     </footer>

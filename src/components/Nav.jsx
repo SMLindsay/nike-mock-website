@@ -1,8 +1,13 @@
 import { headerLogo } from '../assets/images';
 import { hamburger } from '../assets/icons';
 import { navLinks } from '../constants';
+import { useState } from 'react';
 
 const Nav = () => {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const toggleNav = () => {
+        setIsNavOpen(prevIsNavOpen => !prevIsNavOpen);
+    };
   return (
     <header className='padding-x py-8 absolute z-10 w-full'>
         <nav className='flex justify-between items-center max-container'>
@@ -14,7 +19,7 @@ const Nav = () => {
                 height={29} 
                 />
             </a>
-            <ul className='flex-1 flex justify-center items-center gap-16 max-lg:hidden'>
+            <ul className={`flex-1 flex justify-center items-center gap-16 max-lg:hidden ${isNavOpen ? 'block' : 'hidden'}`}>
                 {navLinks.map((item) => (
                     <li key={item.label}>
                         <a 
@@ -25,13 +30,12 @@ const Nav = () => {
                     </li>
                 ))}
             </ul>
-            <div className='hidden max-lg:block'>
+            <div className='hidden max-lg:block' onClick={toggleNav}>
                 <img 
                 src={hamburger} 
                 alt="Hamburger Navigation Button"
                 width={25}
                 height={25}
-                // onClick={() => setIsOpen(!isOpen)}
                 />
             </div>
             {/* <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`} >

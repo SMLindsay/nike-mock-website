@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: false, // 'false' or 'media' or 'class'
   theme: {
     fontSize: {
       xs: ['12px', '16px'],
